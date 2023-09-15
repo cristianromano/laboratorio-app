@@ -15,10 +15,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environment';
+import { BioModule } from './components/bio/bio.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,9 @@ import { environment } from 'src/environment';
     FormsModule,
     ReactiveFormsModule,
     MatProgressBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    BioModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],

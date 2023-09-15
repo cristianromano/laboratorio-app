@@ -10,6 +10,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
+  {
+    path: 'bio',
+    loadChildren: () =>
+      import('./components/bio/bio.module').then((m) => m.BioModule),
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
 
