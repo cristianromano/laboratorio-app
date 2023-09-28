@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -20,6 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environment';
 import { BioModule } from './components/bio/bio.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +30,18 @@ import { BioModule } from './components/bio/bio.module';
     HomeComponent,
     LoginComponent,
     RegistroComponent,
+    NavbarComponent,
   ],
   imports: [
+    CommonModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
